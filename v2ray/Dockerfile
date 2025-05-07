@@ -8,7 +8,7 @@ FROM alpine:latest
 ENV V2RAY_VMESS_PORT=10086
 ENV V2RAY_CLIENT_ID=b831381d-6324-4d53-ad4f-8cda48b30811
 ENV TZ=Asia/Shanghai
-RUN apk add --no-cache tzdata ca-certificates
+RUN apk add --no-cache wget tzdata ca-certificates
 COPY --from=builder /go/app/v2ray /usr/bin/v2ray
 RUN chmod +x /usr/bin/v2ray
 
@@ -18,10 +18,11 @@ RUN wget -O /usr/share/v2ray/geoip-only-cn-private.dat https://github.com/v2fly/
 RUN wget -O /usr/share/v2ray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
 
 COPY entrypoint.sh /
-
 RUN chmod +x /entrypoint.sh
 
 WORKDIR /etc/v2ray
+
+EXPOSE ${V2RAY_VMESS_PORT}
 
 CMD [ "/entrypoint.sh" ]
 
