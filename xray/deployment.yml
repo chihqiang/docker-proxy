@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kube-middleware
+  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proxy-xray
+  labels:
+    app: proxy-xray
+  namespace: kube-middleware
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proxy-xray
+  template:
+    metadata:
+      labels:
+        app: proxy-xray
+    spec:
+      containers:
+        - name: proxy-xray
+          env:
+            - name: XRAY_VMESS_PORT
+              value: "9000"
+            - name: XRAY_CLIENT_ID
+              value: "1eb6e917-774b-4a84-aff6-b058577c60a5"
+          image: zhiqiangwang/proxy:xray
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 500Mi
+          ports:
+            - containerPort: 9000
+              name: tcp-9000
+              protocol: TCP
