@@ -38,3 +38,11 @@ jobs:
             push: true
             platforms: linux/amd64,linux/arm64
             tags: zhiqiangwang/proxy:xray
+
+      - name: Build and Push openvpn Docker image
+        uses: docker/build-push-action@v5
+        with:
+            context: ./openvpn
+            push: true
+            platforms: linux/amd64,linux/arm64
+            tags: zhiqiangwang/proxy:openvpn
