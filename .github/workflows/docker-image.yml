@@ -46,3 +46,19 @@ jobs:
             push: true
             platforms: linux/amd64,linux/arm64
             tags: zhiqiangwang/proxy:openvpn
+      
+      - name: Build and Push squid Docker image
+        uses: docker/build-push-action@v5
+        with:
+            context: ./squid
+            push: true
+            platforms: linux/amd64,linux/arm64
+            tags: zhiqiangwang/proxy:squid
+
+      - name: Build and Push dante Docker image
+        uses: docker/build-push-action@v5
+        with:
+            context: ./dante
+            push: true
+            platforms: linux/amd64,linux/arm64
+            tags: zhiqiangwang/proxy:dante
