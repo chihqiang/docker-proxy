@@ -4,7 +4,7 @@ RUN git clone https://github.com/v2fly/v2ray-core.git app && \
     cd app && git checkout $(git tag --sort=-creatordate | head -n 1) && \
     CGO_ENABLED=0 GOOS=linux go build -v -trimpath -ldflags "-s -w -buildid=" -o v2ray ./main
 
-FROM alpine:latest
+FROM alpine:3.21
 ENV V2RAY_VMESS_PORT=10086
 ENV V2RAY_CLIENT_ID=b831381d-6324-4d53-ad4f-8cda48b30811
 ENV TZ=Asia/Shanghai

@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.21
 
 # 安装 OpenVPN 所需的依赖，包括 openssl（加密）、easy-rsa（证书管理）、openvpn（VPN 服务）、iptables（防火墙）、bash（脚本支持）
 RUN apk add --no-cache openssl easy-rsa openvpn iptables bash

@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.21
 
 # 安装 Squid、Apache 工具（htpasswd）以及其它工具
 RUN apk add --no-cache squid apache2-utils bash gettext
