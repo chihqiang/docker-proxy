@@ -15,4 +15,4 @@ ENV PORT=3128
 RUN chmod +x /entrypoint.sh
 
 # 配置容器启动时执行 entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+CMD [ "/entrypoint.sh" ]
