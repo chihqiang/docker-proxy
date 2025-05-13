@@ -23,42 +23,51 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         
-      - name: Build and Push v2ray Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./v2ray
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: zhiqiangwang/proxy:v2ray
+      # - name: Build and Push v2ray Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: ./v2ray
+      #     push: true
+      #     platforms: linux/amd64,linux/arm64
+      #     tags: zhiqiangwang/proxy:v2ray
 
-      - name: Build and Push xray Docker image
-        uses: docker/build-push-action@v5
-        with:
-            context: ./xray
-            push: true
-            platforms: linux/amd64,linux/arm64
-            tags: zhiqiangwang/proxy:xray
+      # - name: Build and Push xray Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #       context: ./xray
+      #       push: true
+      #       platforms: linux/amd64,linux/arm64
+      #       tags: zhiqiangwang/proxy:xray
 
-      - name: Build and Push openvpn Docker image
-        uses: docker/build-push-action@v5
-        with:
-            context: ./openvpn
-            push: true
-            platforms: linux/amd64,linux/arm64
-            tags: zhiqiangwang/proxy:openvpn
+      # - name: Build and Push openvpn Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #       context: ./openvpn
+      #       push: true
+      #       platforms: linux/amd64,linux/arm64
+      #       tags: zhiqiangwang/proxy:openvpn
       
-      - name: Build and Push squid Docker image
-        uses: docker/build-push-action@v5
-        with:
-            context: ./squid
-            push: true
-            platforms: linux/amd64,linux/arm64
-            tags: zhiqiangwang/proxy:squid
+      # - name: Build and Push squid Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #       context: ./squid
+      #       push: true
+      #       platforms: linux/amd64,linux/arm64
+      #       tags: zhiqiangwang/proxy:squid
 
-      - name: Build and Push dante Docker image
+      # - name: Build and Push dante Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #       context: ./dante
+      #       push: true
+      #       platforms: linux/amd64,linux/arm64
+      #       tags: zhiqiangwang/proxy:dante
+
+      - name: Build and Push ssh Docker image
         uses: docker/build-push-action@v5
         with:
-            context: ./dante
+            context: ./ssh
             push: true
             platforms: linux/amd64,linux/arm64
-            tags: zhiqiangwang/proxy:dante
+            tags: zhiqiangwang/proxy:ssh
+
