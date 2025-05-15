@@ -77,7 +77,7 @@ gen_push_options() {
 CONFIG_FILE="/etc/openvpn/openvpn.conf"
 if [ ! -e "$CONFIG_FILE" ]; then
     cat > "$CONFIG_FILE" <<EOF
-port 443
+port 1194
 proto tcp
 dev tun
 ca /etc/openvpn/certs/pki/ca.crt

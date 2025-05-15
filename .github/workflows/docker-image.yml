@@ -39,13 +39,13 @@ jobs:
       #       platforms: linux/amd64,linux/arm64
       #       tags: zhiqiangwang/proxy:xray
 
-      # - name: Build and Push openvpn Docker image
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #       context: ./openvpn
-      #       push: true
-      #       platforms: linux/amd64,linux/arm64
-      #       tags: zhiqiangwang/proxy:openvpn
+      - name: Build and Push openvpn Docker image
+        uses: docker/build-push-action@v5
+        with:
+            context: ./openvpn
+            push: true
+            platforms: linux/amd64,linux/arm64
+            tags: zhiqiangwang/proxy:openvpn
       
       # - name: Build and Push squid Docker image
       #   uses: docker/build-push-action@v5
@@ -63,11 +63,11 @@ jobs:
       #       platforms: linux/amd64,linux/arm64
       #       tags: zhiqiangwang/proxy:dante
 
-      - name: Build and Push ssh Docker image
-        uses: docker/build-push-action@v5
-        with:
-            context: ./ssh
-            push: true
-            platforms: linux/amd64,linux/arm64
-            tags: zhiqiangwang/proxy:ssh
+      # - name: Build and Push ssh Docker image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #       context: ./ssh
+      #       push: true
+      #       platforms: linux/amd64,linux/arm64
+      #       tags: zhiqiangwang/proxy:ssh
 

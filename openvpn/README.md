@@ -27,7 +27,7 @@ cd /etc/openvpn/setup
 ## openvpn.conf
 
 ~~~
-port 443                       # OpenVPN 服务监听的端口（改为 443，常用于伪装 HTTPS 流量）
+port 1194                       # OpenVPN 服务监听的端口（改为 1194，常用于伪装 HTTPS 流量）
 proto tcp                      # 使用 TCP 协议（更易穿越防火墙）
 
 dev tun                        # 使用 TUN 虚拟网络设备（用于 IP 隧道）
