@@ -10,11 +10,11 @@ jobs:
     strategy:
       matrix:
         image:
-          # - v2ray
-          # - xray
-          # - openvpn
-          # - squid
-          # - dante
+          - v2ray
+          - xray
+          - openvpn
+          - squid
+          - dante
           - ssh
 
     steps:
