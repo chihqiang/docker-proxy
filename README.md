@@ -69,6 +69,7 @@ docker pull ghcr.io/chihqiang/proxy:openvpn
 ```
 docker run -it --rm --name openvpn \
   --privileged \
+  -p 1194:1194 \
   -e USE_DEFAULT_CONF=1 \
   --device=/dev/net/tun \
   ghcr.io/chihqiang/proxy:openvpn
@@ -79,6 +80,7 @@ docker run -it --rm --name openvpn \
 ```
 docker run -it --rm --name openvpn \
   --privileged \
+  -p 1194:1194 \
   -e USE_DEFAULT_CONF=0 \
   --device=/dev/net/tun \
   ghcr.io/chihqiang/proxy:openvpn
@@ -89,6 +91,7 @@ docker run -it --rm --name openvpn \
 ~~~
 docker run -it --rm --name openvpn \
   --privileged \
+  -p 1194:1194 \
   -v openvpn.conf:/etc/openvpn/openvpn.conf
   -e USE_DEFAULT_CONF=0 \
   --device=/dev/net/tun \
