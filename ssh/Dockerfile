@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 # 安装必要的软件和SSH服务
 RUN apt-get update && \ 
-    apt-get install -y openssh-server sudo git vim sudo curl jq net-tools iputils-ping ca-certificates dnsutils && \
+    apt-get install -y openssh-server sudo git git-svn subversion vim sudo curl jq net-tools iputils-ping ca-certificates dnsutils && \
     mkdir /var/run/sshd
 # 允许 SSH 访问
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
